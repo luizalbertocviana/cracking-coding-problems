@@ -2,7 +2,7 @@
 #include <map>
 #include <set>
 
-// given two strings, decide if one is a permutation of the other
+// given two strings, decide whether one is a permutation of the other
 
 bool permutation(const std::string& str1, const std::string& str2){
   std::set<char> all_chars        {};
