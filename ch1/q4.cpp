@@ -4,8 +4,11 @@
 #include <map>
 #include <optional>
 
+// given a string, decide whether it is a palindrome permutation
+
 constexpr const bool debug {false};
 
+// builds a map counting the characters of a string
 std::map<char, unsigned> count_chars(const std::string& str){
   std::map<char, unsigned> count {};
 
@@ -16,6 +19,7 @@ std::map<char, unsigned> count_chars(const std::string& str){
   return count;
 }
 
+// decides whether a string is a palindrome permutation
 bool palindrome_permutation(const std::string& str, const std::map<char, unsigned>* char_count_ = nullptr){
   auto char_count {char_count_ ? *char_count_ : count_chars(str)};
   
@@ -41,6 +45,8 @@ bool palindrome_permutation(const std::string& str, const std::map<char, unsigne
   }
 }
 
+// returns a palindrome in case string is a palindrome permutation;
+// otherwise, returns nothing
 std::optional<std::string> build_palindrome(const std::string& str){
   auto char_count {count_chars(str)};
 
