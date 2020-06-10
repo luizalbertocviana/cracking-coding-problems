@@ -5,8 +5,8 @@
 // determine whether a string has all unique characters
 
 bool unique(const std::string& col){
-  std::set<char> set{};
-  for(char c : col){
+  std::set<char> set {};
+  for (char c : col){
     if (set.count(c)){
       return false;
     }
@@ -19,7 +19,7 @@ bool unique(const std::string& col){
 
 int main(int argc, char** argv){
   if (argc == 2){
-    std::string str{argv[1]};
+    std::string str {argv[1]};
 
     if (unique(str)){
       std::cout << str << " has no repeated characters\n";
