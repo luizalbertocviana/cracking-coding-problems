@@ -2,7 +2,7 @@
 #include <set>
 #include <string>
 
-// determine if a string has all unique characters
+// determine whether a string has all unique characters
 
 bool unique(const std::string& col){
   std::set<char> set{};
