@@ -6,8 +6,6 @@
 
 // given a string, decide whether it is a palindrome permutation
 
-constexpr const bool debug {false};
-
 // builds a map counting the characters of a string
 std::map<char, unsigned> count_chars(const std::string& str){
   // this will hold the char count we are going to do
@@ -62,9 +60,6 @@ std::optional<std::string> build_palindrome(const std::string& str){
   // first we do a char counting of str
   auto char_count {count_chars(str)};
 
-  if constexpr (debug)
-                 std::cout << "counted chars\n";
-
   // if str is a palindrome permutation, we are going to build a
   // related palindrome
   if (palindrome_permutation(str, &char_count)){
@@ -74,8 +69,6 @@ std::optional<std::string> build_palindrome(const std::string& str){
     // we verify whether there is a char with odd counting in str
     auto it {std::find_if(std::begin(char_count), std::end(char_count),
                           [](const auto& pair) {return pair.second % 2 != 0;})};
-    if constexpr (debug)
-                   std::cout << "looked for char with odd counting\n";
 
     // if there is such a char, it should occur in the middle of palindrome
     if (it != std::end(char_count)){
@@ -86,8 +79,6 @@ std::optional<std::string> build_palindrome(const std::string& str){
       if (it->second == 0){
         char_count.erase(it);
       }
-      if constexpr (debug)
-                     std::cout << "inserted odd char at middle\n";
     }
 
     // notice that, from now on, every char in char_count has an even count
@@ -110,8 +101,6 @@ std::optional<std::string> build_palindrome(const std::string& str){
         }
       }
     }
-    if constexpr (debug)
-                   std::cout << "inserted remaining chars\n";
     
     // now we build a string from the deque iterators
     std::string palindrome_str {std::cbegin(palindrome), std::cend(palindrome)};
@@ -127,13 +116,7 @@ int main(int argc, char** argv){
   if (argc == 2){
     std::string str {argv[1]};
 
-    if constexpr (debug)
-                   std::cout << "built string\n";
-
     auto palindrome {build_palindrome(str)};
-
-    if constexpr (debug)
-                   std::cout << "built palindrome\n";
 
     if (palindrome){
       std::cout << str << " is a palindrome permutation: " << *palindrome << '\n';
