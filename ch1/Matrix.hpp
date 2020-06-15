@@ -139,4 +139,12 @@ public:
   Col col(size_type j){
     return {*this, j};
   }
+
+  Matrix& operator=(const Type& e){
+    for (size_type i {0}; i < num_rows; i++){
+      row(i) = e;
+    }
+
+    return *this;
+  }
 };
