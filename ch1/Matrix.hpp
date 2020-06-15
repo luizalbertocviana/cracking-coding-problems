@@ -74,7 +74,7 @@ public:
       return parent_.at(row_index_, j);
     }
 
-    Row& operator=(Type e){
+    Row& operator=(const Type& e){
       for (size_type j {0}; j < parent_.num_cols; j++){
         (*this)[j] = e;
       }
@@ -109,7 +109,7 @@ public:
       return parent_.at(i, col_index_);
     }
 
-    Col& operator=(Type e){
+    Col& operator=(const Type& e){
       for (size_type i {0}; i < parent_.num_rows; i++){
         (*this)[i] = e;
       }
