@@ -67,4 +67,6 @@ int main(){
   zerofy_matrix(m);
 
   m.print();
+
+  return 0;
 }
