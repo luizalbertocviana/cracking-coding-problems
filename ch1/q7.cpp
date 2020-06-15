@@ -14,9 +14,7 @@ bool rotate(Matrix<Type>& m){
     size_type right_col {m.num_cols - 1};
 
     while (left_col < right_col){
-      for (size_type i {0}; i < m.num_rows; i++){
-        std::swap(m.at(i, left_col), m.at(i, right_col));
-      }
+      m.col(left_col).swap(m.col(right_col));
       
       left_col++;
       right_col--;
@@ -34,9 +32,7 @@ int main(){
   using size_type = Matrix<int>::size_type;
 
   for (size_type i {0}; i < m.num_rows; i++){
-    for (size_type j {0}; j < m.num_cols; j++){
-      m.at(i, j) = i;
-    }
+    m.row(i) = i;
   }
 
   m.print();
