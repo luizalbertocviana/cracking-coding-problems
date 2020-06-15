@@ -44,7 +44,7 @@ void zerofy_matrix(Matrix<Type>& m){
           candidate_cols[j] = false;
 
           // also, there is no need to keep looking row i, since it
-          // was just zeroed
+          // just was zeroed
           break;
         }
       }
