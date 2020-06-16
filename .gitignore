@@ -27,3 +27,6 @@
 /ch1/q8_exe
 /ch1/q9.cpp~
 /ch1/q9_exe
+/ch2/q1.cpp~
+*.o
+/ch2/q1_exe
