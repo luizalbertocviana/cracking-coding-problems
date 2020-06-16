@@ -28,7 +28,7 @@ bool zerofy_position(Matrix<Type>& m, size_type<Type> i, size_type<Type> j){
 // applies zerofy_position to all positions of m
 template<typename Type>
 void zerofy_matrix(Matrix<Type>& m){
-  // we use this for for skip columns zeroed by ourselves
+  // we use this for skip columns zeroed by ourselves
   std::vector<bool> candidate_cols (true, m.num_cols);
 
   // for each row ...
