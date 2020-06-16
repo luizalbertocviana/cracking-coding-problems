@@ -34,8 +34,8 @@ std::string compress_string(const std::string& str){
   }
 
   // when the loop exits, we still need to consider the suffix of str
-  // of equal chars; as it == std::cend(str), it - 1 is the last char
-  // of str
+  // consisting of equal chars; as it == std::cend(str), it - 1 is the
+  // last char of str
   compressed << *(it - 1);
   compressed << std::distance(search_start, it);
 
