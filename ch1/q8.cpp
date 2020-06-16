@@ -33,8 +33,10 @@ void zerofy_matrix(Matrix<Type>& m){
 
   // for each row ...
   for (size_type<Type> i {0}; i < m.num_rows; i++){
+    bool zeroed_row {false};
+
     // and for each column ...
-    for (size_type<Type> j {0}; j < m.num_cols; j++){
+    for (size_type<Type> j {0}; !zeroed_row && j < m.num_cols; j++){
       // if column was not zeroed yet ...
       if (candidate_cols[j]){
         // we verify whether it should be zeroed
@@ -44,8 +46,8 @@ void zerofy_matrix(Matrix<Type>& m){
           candidate_cols[j] = false;
 
           // also, there is no need to keep looking row i, since it
-          // just was zeroed
-          break;
+          // just had been zeroed
+          zeroed_row = true;
         }
       }
     }
