@@ -21,7 +21,7 @@ bool rotation(const std::string& str1, const std::string& str2){
       bool is_rotation {true};
 
       // we iterate through str2 ...
-      for (size_type i {0}; i < str2.size(); i++){
+      for (size_type i {0}; is_rotation && i < str2.size(); i++){
         // and compare it with the rotation of str1 starting at
         // check_start; if one char mismatches, we flag that
         if (str1[(check_start + i) % str1.size()] != str2[i]){
