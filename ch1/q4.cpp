@@ -96,7 +96,7 @@ std::optional<std::string> build_palindrome(const std::string& str){
         if (count == 0){
           char_count.erase(c);
           // since we have altered char_count, the iterators used in
-          // this loop have became invalid, so we break the loop
+          // this loop have become invalid, so we break the loop
           break;
         }
       }
