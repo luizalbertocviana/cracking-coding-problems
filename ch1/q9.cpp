@@ -1,7 +1,7 @@
 #include <iostream>
 
 // given two strings, decide whether one is rotation of the other, eg
-// banana is rotatio of nabana
+// banana is rotation of nabana
 
 // this functions does just that
 bool rotation(const std::string& str1, const std::string& str2){
