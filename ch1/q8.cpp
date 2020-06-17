@@ -1,7 +1,7 @@
 #include <iostream>
 #include <vector>
 
-#include "Matrix.hpp"
+#include <Matrix.hpp>
 
 // write a function that, given a matrix, if position [i, j] is zero,
 // then row i and column j are entirely set to zero
