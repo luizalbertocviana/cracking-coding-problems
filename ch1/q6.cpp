@@ -2,6 +2,8 @@
 #include <iostream>
 #include <sstream>
 
+#include <args.hpp>
+
 // implement a basic string compression using the counts of
 // consecutive repeated chars
 
@@ -47,8 +49,10 @@ std::string compress_string(const std::string& str){
 }
 
 int main(int argc, char** argv){
-  if (argc == 2){
-    std::string str {argv[1]};
+  auto args {get_args(argc, argv)};
+
+  if (args.size() == 2){
+    std::string str {args[1]};
 
     auto compressed {compress_string(str)};
 

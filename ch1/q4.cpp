@@ -4,6 +4,8 @@
 #include <map>
 #include <optional>
 
+#include <args.hpp>
+
 // given a string, decide whether it is a palindrome permutation
 
 // builds a map counting the characters of a string
@@ -113,8 +115,10 @@ std::optional<std::string> build_palindrome(const std::string& str){
 }
 
 int main(int argc, char** argv){
-  if (argc == 2){
-    std::string str {argv[1]};
+  auto args {get_args(argc, argv)};
+
+  if (args.size() == 2){
+    std::string str {args[1]};
 
     auto palindrome {build_palindrome(str)};
 

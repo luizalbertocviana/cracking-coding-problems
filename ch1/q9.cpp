@@ -1,5 +1,7 @@
 #include <iostream>
 
+#include <args.hpp>
+
 // given two strings, decide whether one is rotation of the other, eg
 // banana is rotation of nabana
 
@@ -50,9 +52,11 @@ bool rotation(const std::string& str1, const std::string& str2){
 }
 
 int main(int argc, char** argv){
-  if (argc == 3){
-    std::string str1 {argv[1]};
-    std::string str2 {argv[2]};
+  auto args {get_args(argc, argv)};
+
+  if (args.size() == 3){
+    std::string str1 {args[1]};
+    std::string str2 {args[2]};
 
     if (rotation(str1, str2)){
       std::cout << str1 << " is a rotation of " << str2 << '\n';

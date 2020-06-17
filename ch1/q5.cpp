@@ -1,6 +1,8 @@
 #include <algorithm>
 #include <iostream>
 
+#include <args.hpp>
+
 // given two strings, decide whether their edit distance is at most one
 
 bool nearly_equal(const std::string& str1, const std::string& str2){
@@ -46,9 +48,11 @@ bool nearly_equal(const std::string& str1, const std::string& str2){
 }
 
 int main(int argc, char** argv){
-  if (argc == 3){
-    std::string str1 {argv[1]};
-    std::string str2 {argv[2]};
+  auto args {get_args(argc, argv)};
+
+  if (args.size() == 3){
+    std::string str1 {args[1]};
+    std::string str2 {args[2]};
 
     if (nearly_equal(str1, str2)){
       std::cout << str1 << " is nearly equal to " << str2 << '\n';

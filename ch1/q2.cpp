@@ -2,6 +2,8 @@
 #include <map>
 #include <set>
 
+#include <args.hpp>
+
 // given two strings, decide whether one is a permutation of the other
 
 bool permutation(const std::string& str1, const std::string& str2){
@@ -32,9 +34,11 @@ bool permutation(const std::string& str1, const std::string& str2){
 }
 
 int main(int argc, char** argv){
-  if (argc == 3){
-    std::string str1 {argv[1]};
-    std::string str2 {argv[2]};
+  auto args {get_args(argc, argv)};
+
+  if (args.size() == 3){
+    std::string str1 {args[1]};
+    std::string str2 {args[2]};
 
     if (permutation(str1, str2)){
       std::cout << str1 << " is a permutation of " << str2 << '\n';

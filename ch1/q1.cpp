@@ -2,6 +2,8 @@
 #include <set>
 #include <string>
 
+#include <args.hpp>
+
 // determine whether a string has all unique characters
 
 bool unique(const std::string& col){
@@ -24,8 +26,10 @@ bool unique(const std::string& col){
 }
 
 int main(int argc, char** argv){
-  if (argc == 2){
-    std::string str {argv[1]};
+  auto args {get_args(argc, argv)};
+
+  if (args.size() == 2){
+    std::string str {args[1]};
 
     if (unique(str)){
       std::cout << str << " has no repeated characters\n";

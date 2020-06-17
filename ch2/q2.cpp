@@ -1,6 +1,8 @@
 #include <iostream>
 #include <list>
 
+#include <args.hpp>
+
 // given k and a list, find its kth to last element
 
 // returns an iterator to kth to last element of list
@@ -27,10 +29,12 @@ auto list_kth_last_iterator(std::list<Type>& list, typename std::list<Type>::siz
 }
 
 int main(int argc, char** argv){
-  if (argc > 2){
-    unsigned long k {std::stoul(argv[1])};
+  auto args {get_args(argc, argv)};
+
+  if (args.size() > 2){
+    unsigned long k {std::stoul(args[1])};
     
-    std::list<std::string> list {argv + 2, argv + argc};
+    std::list<std::string> list {std::begin(args) + 2, std::end(args)};
 
     auto kth {list_kth_last_iterator(list, k)};
 

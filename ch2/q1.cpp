@@ -2,6 +2,8 @@
 #include <iostream>
 #include <list>
 
+#include <args.hpp>
+
 // given a (possibly unsorted) linked list of elements, remove
 // dupliacte elements from it
 
@@ -32,8 +34,10 @@ void remove_duplicates(Collection& list){
 }
 
 int main(int argc, char** argv){
-  if (argc > 1){
-    std::list<std::string> list {argv + 1, argv + argc};
+  auto args {get_args(argc, argv)};
+
+  if (args.size() > 1){
+    std::list<std::string> list {std::begin(args) + 1, std::end(args)};
 
     remove_duplicates(list);
 
