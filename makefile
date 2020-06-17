@@ -16,3 +16,6 @@ LINKING_OPTIONS		= $(INCLUDE_OPTIONS) -Wall -Wextra -std=$(STD) -g
 
 %_exe : %.o
 	$(COMPILER) $(LINKING_OPTIONS) $< -o $@
+
+clean :
+	rm -f *_exe *.o
