@@ -1,1 +1,1 @@
-../makefile
+include ../makefile
