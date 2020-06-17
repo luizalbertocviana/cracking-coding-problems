@@ -1,3 +1,7 @@
+MAKEFILE_NAME = $(lastword $(MAKEFILE_LIST))
+
+ROOT_DIR = $(dir $(MAKEFILE_NAME))
+
 COMPILER	= g++
 STD		= c++17
 
