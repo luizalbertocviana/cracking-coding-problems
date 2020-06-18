@@ -21,9 +21,6 @@ EXES	= $(CPPS:.cpp=_exe)
 
 all : $(EXES)
 
-%.hpp.gch : %.hpp
-	$(COMPILER) $(COMPILING_OPTIONS) $< -o $@
-
 %.o : %.cpp
 	$(COMPILER) $(COMPILING_OPTIONS) $< -o $@
 
