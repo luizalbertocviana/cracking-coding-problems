@@ -1,3 +1,6 @@
+#ifndef matrix_hpp
+#define matrix_hpp
+
 #include <algorithm>
 #include <vector>
 #include <iostream>
@@ -148,3 +151,5 @@ public:
     return *this;
   }
 };
+
+#endif
