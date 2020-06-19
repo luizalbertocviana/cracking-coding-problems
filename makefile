@@ -13,7 +13,7 @@ ERROR_OPTIONS		= -pedantic-errors -Wall -Wextra -Winvalid-pch
 LINKING_OPTIONS		= -g -std=$(STD) $(INCLUDE_OPTIONS) $(ERROR_OPTIONS)
 COMPILING_OPTIONS	= -c $(LINKING_OPTIONS)
 
-CPPS = $(foreach dir, $(SOURCE_DIRS), $(wildcard $(dir)/*.cpp))
+CPPS = $(foreach dir, $(SOURCE_DIRS),  $(wildcard $(dir)/*.cpp))
 HPPS = $(foreach dir, $(INCLUDE_DIRS), $(wildcard $(dir)/*.hpp))
 
 OBJECTS	= $(CPPS:.cpp=.o)
