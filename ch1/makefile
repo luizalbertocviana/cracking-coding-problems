@@ -1,1 +1,1 @@
-include ../makefile
+../subdir.mk
