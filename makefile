@@ -20,7 +20,7 @@ GCHS	= $(HPPS:.hpp=.hpp.gch)
 OBJECTS	= $(CPPS:.cpp=.o)
 EXES	= $(CPPS:.cpp=_exe)
 
-all : $(EXES)
+all : headers exes
 
 headers : $(GCHS)
 
