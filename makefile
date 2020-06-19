@@ -24,6 +24,8 @@ all : headers exes
 
 headers : $(GCHS)
 
+exes : $(EXES)
+
 %.hpp.gch : %.hpp
 	$(COMPILER) $(COMPILING_OPTIONS) $< -o $@
 
