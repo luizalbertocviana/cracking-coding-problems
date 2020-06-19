@@ -16,10 +16,17 @@ COMPILING_OPTIONS	= -c $(LINKING_OPTIONS)
 CPPS = $(foreach dir, $(SOURCE_DIRS),  $(wildcard $(dir)/*.cpp))
 HPPS = $(foreach dir, $(INCLUDE_DIRS), $(wildcard $(dir)/*.hpp))
 
+GCHS = $(HPPS:.hpp=.hpp.gch)
+
 OBJECTS	= $(CPPS:.cpp=.o)
 EXES	= $(CPPS:.cpp=_exe)
 
 all : $(EXES)
+
+headers : $(GCHS)
+
+%.hpp.gch : %.hpp
+	$(COMPILER) $(COMPILING_OPTIONS) $< -o $@
 
 %.o : %.cpp
 	$(COMPILER) $(COMPILING_OPTIONS) $< -o $@
@@ -30,4 +37,4 @@ all : $(EXES)
 clean :
 	rm -f $(OBJECTS) $(EXES)
 
-.PHONY : all clean
+.PHONY : all clean headers
