@@ -36,6 +36,6 @@ exes : $(EXES)
 	$(COMPILER) $(LINKING_OPTIONS) $< -o $@
 
 clean :
-	rm -f $(OBJECTS) $(EXES)
+	rm -f $(GCHS) $(OBJECTS) $(EXES)
 
-.PHONY : all clean headers
+.PHONY : all clean exes headers
