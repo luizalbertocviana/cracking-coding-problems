@@ -16,8 +16,7 @@ COMPILING_OPTIONS	= -c $(LINKING_OPTIONS)
 CPPS = $(foreach dir, $(SOURCE_DIRS),  $(wildcard $(dir)/*.cpp))
 HPPS = $(foreach dir, $(INCLUDE_DIRS), $(wildcard $(dir)/*.hpp))
 
-GCHS = $(HPPS:.hpp=.hpp.gch)
-
+GCHS	= $(HPPS:.hpp=.hpp.gch)
 OBJECTS	= $(CPPS:.cpp=.o)
 EXES	= $(CPPS:.cpp=_exe)
 
