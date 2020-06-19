@@ -1,6 +1,6 @@
-#include <iostream>
-
 #include <args.hpp>
+
+#include <iostream>
 
 // given two strings, decide whether one is rotation of the other, eg
 // banana is rotation of nabana

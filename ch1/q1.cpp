@@ -1,8 +1,8 @@
+#include <args.hpp>
+
 #include <iostream>
 #include <set>
 #include <string>
-
-#include <args.hpp>
 
 // determine whether a string has all unique characters
 

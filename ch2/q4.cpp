@@ -1,8 +1,8 @@
+#include <args.hpp>
+
 #include <algorithm>
 #include <iostream>
 #include <list>
-
-#include <args.hpp>
 
 // given a list and a value, partition the list such that all values
 // less than value occur before the remaining ones

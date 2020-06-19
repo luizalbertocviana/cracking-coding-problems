@@ -1,8 +1,8 @@
+#include <args.hpp>
+
 #include <iostream>
 #include <map>
 #include <set>
-
-#include <args.hpp>
 
 // given two strings, decide whether one is a permutation of the other
 

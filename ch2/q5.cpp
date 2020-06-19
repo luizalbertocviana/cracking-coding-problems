@@ -1,10 +1,10 @@
+#include <args.hpp>
+
 #include <algorithm>
 #include <iostream>
 #include <list>
 #include <optional>
 #include <string>
-
-#include <args.hpp>
 
 // you have two numbers represented by a linked list, where each node
 // contains a single digit; the digits are stored from least

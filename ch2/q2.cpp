@@ -1,7 +1,7 @@
+#include <args.hpp>
+
 #include <iostream>
 #include <list>
-
-#include <args.hpp>
 
 // given k and a list, find its kth to last element
 

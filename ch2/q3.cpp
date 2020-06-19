@@ -1,8 +1,8 @@
+#include <args.hpp>
+
 #include <algorithm>
 #include <iostream>
 #include <list>
-
-#include <args.hpp>
 
 // write a function to delete a node in a list
 

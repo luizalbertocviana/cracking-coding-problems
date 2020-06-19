@@ -1,7 +1,7 @@
+#include <args.hpp>
+
 #include <algorithm>
 #include <iostream>
-
-#include <args.hpp>
 
 // given two strings, decide whether their edit distance is at most one
 

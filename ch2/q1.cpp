@@ -1,8 +1,8 @@
+#include <args.hpp>
+
 #include <algorithm>
 #include <iostream>
 #include <list>
-
-#include <args.hpp>
 
 // given a (possibly unsorted) linked list of elements, remove
 // dupliacte elements from it

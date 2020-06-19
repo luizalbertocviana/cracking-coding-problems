@@ -1,8 +1,8 @@
+#include <args.hpp>
+
 #include <algorithm>
 #include <iostream>
 #include <sstream>
-
-#include <args.hpp>
 
 // implement a basic string compression using the counts of
 // consecutive repeated chars

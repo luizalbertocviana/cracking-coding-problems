@@ -1,10 +1,10 @@
+#include <args.hpp>
+
 #include <algorithm>
 #include <deque>
 #include <iostream>
 #include <map>
 #include <optional>
-
-#include <args.hpp>
 
 // given a string, decide whether it is a palindrome permutation
 

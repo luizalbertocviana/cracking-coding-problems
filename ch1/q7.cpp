@@ -1,7 +1,7 @@
+#include <Matrix.hpp>
+
 #include <algorithm>
 #include <iostream>
-
-#include <Matrix.hpp>
 
 // given a square matrix, write a function to rotate it 90 degrees
 // clockwise in-place
