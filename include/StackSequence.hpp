@@ -1,12 +1,12 @@
-#ifndef stackset_hpp
-#define stackset_hpp
+#ifndef stacksequence_hpp
+#define stacksequence_hpp
 
 #include <array>
 #include <optional>
 #include <vector>
 
 template<typename Type, unsigned n>
-class StackSet{
+class StackSequence{
   std::vector<Type>  data_;
   std::array<int, n> head_;
 
@@ -18,7 +18,7 @@ class StackSet{
     return data_[head_index(i)];
   }
 public:
-  StackSet()
+  StackSequence()
     : data_{}, head_{}
   {
     data_.resize(n);
