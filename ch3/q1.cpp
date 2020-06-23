@@ -1,11 +1,11 @@
-#include <StackSet.hpp>
+#include <StackSequence.hpp>
 
 #include <iostream>
 
 // implement three stacks using a single array
 
 int main(){
-  StackSet<int, 3> stk_set {};
+  StackSequence<int, 3> stk_set {};
 
   for (int i {0}; i < 20; ++i){
     stk_set.push(i % 3, i);
