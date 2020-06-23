@@ -1,6 +1,5 @@
 g++
 -std=c++17
--I.
 -I./include
 -Wall
 -Wextra
