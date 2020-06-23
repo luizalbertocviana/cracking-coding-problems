@@ -4,6 +4,10 @@
 #include <algorithm>
 #include <iostream>
 
+// implement a stack that keeps track of its current minimum element;
+// insertion, removal, access to top and to minimum element should
+// cost O(1)
+
 int main(int argc, char** argv){
   auto args {get_args(argc, argv)};
 
