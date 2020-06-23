@@ -5,7 +5,7 @@ ROOT_DIR = $(dir $(MAKEFILE_NAME))
 COMPILER	= g++
 STD		= c++17
 
-INCLUDE_DIRS	= $(ROOT_DIR)/include
+INCLUDE_DIRS	= $(ROOT_DIR)/include $(ROOT_DIR)/data-structures-cpp
 SOURCE_DIRS	= $(wildcard $(ROOT_DIR)/ch*)
 
 INCLUDE_OPTIONS		= $(foreach dir, $(INCLUDE_DIRS), -I$(dir))
