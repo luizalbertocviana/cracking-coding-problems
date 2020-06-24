@@ -1,5 +1,6 @@
 g++
 -std=c++17
 -I./include
+-I./data-structures-cpp
 -Wall
 -Wextra
