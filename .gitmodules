@@ -1,3 +1,4 @@
 [submodule "data-structures-cpp"]
 	path = data-structures-cpp
 	url = https://github.com/luizalbertocviana/data-structures-cpp
+        ignore = dirty
