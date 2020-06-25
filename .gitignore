@@ -55,3 +55,7 @@
 /ch3/q3.cpp~
 /ch3/q3_exe
 /ch3/q4_exe
+/ch1/gmon.out
+*.json
+/ch1/uftrace.data.old/
+/ch1/uftrace.data/
