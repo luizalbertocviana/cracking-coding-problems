@@ -59,3 +59,4 @@
 *.json
 /ch1/uftrace.data.old/
 /ch1/uftrace.data/
+/ch3/gmon.out
