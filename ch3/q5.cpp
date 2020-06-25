@@ -20,22 +20,14 @@ void sort_stack(std::stack<Type>& stk){
   }
 
   while (!auxiliar_stk.empty()){
-    if (stk.empty()){
-      move_top(auxiliar_stk, stk);
-    }
-    else{
-      if (auxiliar_stk.top() <= stk.top()){
-        move_top(auxiliar_stk, stk);
-      }
-      else{
-        Type copy {auxiliar_stk.top()};
-        auxiliar_stk.pop();
+    Type copy {auxiliar_stk.top()};
+    auxiliar_stk.pop();
 
-        move_top(stk, auxiliar_stk);
-
-        auxiliar_stk.push(copy);
-      }
+    while (!stk.empty() && copy > stk.top()){
+      move_top(stk, auxiliar_stk);
     }
+
+    stk.push(copy);
   }
 }
 
