@@ -5,28 +5,40 @@
 #include <stack>
 #include <vector>
 
+// sort a stack using an auxiliary stack; smaller elements should be
+// at the top, bigger elements should be at the bottom
+
+// moves the element on top of first stack to the top of second
 template<typename Type>
 void move_top(std::stack<Type>& from, std::stack<Type>& to){
   to.push(from.top());
   from.pop();
 }
 
+// sorts a stack using an auxiliary stack
 template<typename Type>
 void sort_stack(std::stack<Type>& stk){
-  std::stack<Type> auxiliar_stk {};
+  // creates auxiliary stack
+  std::stack<Type> aux_stk {};
 
+  // moves all stk content to aux_stk
   while (!stk.empty()){
-    move_top(stk, auxiliar_stk);
+    move_top(stk, aux_stk);
   }
 
-  while (!auxiliar_stk.empty()){
-    Type copy {auxiliar_stk.top()};
-    auxiliar_stk.pop();
+  // performs an insertion sort
+  while (!aux_stk.empty()){
+    // moves aux_stk top to copy
+    Type copy {aux_stk.top()};
+    aux_stk.pop();
 
+    // moves content from stk to aux_stk until stk top is suitable for
+    // receive copy
     while (!stk.empty() && copy > stk.top()){
-      move_top(stk, auxiliar_stk);
+      move_top(stk, aux_stk);
     }
 
+    // then put copy on top of stk
     stk.push(copy);
   }
 }
