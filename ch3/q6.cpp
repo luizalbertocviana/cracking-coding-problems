@@ -113,11 +113,11 @@ public:
   {}
 
   void enqueue(Dog&& dog){
-    enqueue_(dog, dog_queue);
+    enqueue_(std::move(dog), dog_queue);
   }
 
   void enqueue(Cat&& cat){
-    enqueue_(cat, cat_queue);
+    enqueue_(std::move(cat), cat_queue);
   }
 
   std::unique_ptr<Animal> dequeue_any(){
