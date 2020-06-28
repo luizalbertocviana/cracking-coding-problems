@@ -117,11 +117,8 @@ class Shelter{
     // pure_type represents Type with no reference mark (&)
     using pure_type = std::remove_reference_t<Type>;
 
-    // now animal is held by a unique_ptr
-    auto unique_animal {std::make_unique<pure_type>(std::move(animal))};
-
-    // moves unique_animal into the queue set
-    queue_set_.enqueue_at(queue_id, std::move(unique_animal));
+    // moves animal (held by unique_ptr) into queue indicated by queue_id
+    queue_set_.enqueue_at(queue_id, std::make_unique<pure_type>(std::move(animal)));
   }
 
   // dequeues an animal from queue indicated by queue_id
