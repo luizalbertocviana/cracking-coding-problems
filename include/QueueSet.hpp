@@ -16,7 +16,7 @@ class QueueSet{
     Type      content;
     queue_ref queue;
 
-    Element(Type& c, queue_ref r) : content{std::move(c)}, queue{r}
+    Element(Type&& c, queue_ref r) : content{std::move(c)}, queue{r}
     {}
   };
 
