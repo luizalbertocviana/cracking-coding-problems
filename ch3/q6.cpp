@@ -67,11 +67,11 @@ public:
     return *this;
   }
 
-  Cat(Cat&& cat) : Animal{cat}, Identity{cat}
+  Cat(Cat&& cat) : Animal{std::move(cat)}, Identity{std::move(cat)}
   {}
 
   Cat& operator=(Cat&& cat){
-    Identity::operator=(cat);
+    Identity::operator=(std::move(cat));
 
     return *this;
   }
