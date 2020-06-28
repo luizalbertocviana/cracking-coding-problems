@@ -138,7 +138,7 @@ public:
   }
 };
 
-int main(){
+void test_shelter(){
   Shelter shelter {};
 
   auto p {10};
@@ -169,6 +169,10 @@ int main(){
   while (auto animal_ptr {shelter.dequeue_any()}){
     std::cout << animal_ptr->talk() << '\n';
   }
+}
+
+int main(){
+  test_shelter();
 
   return 0;
 }
