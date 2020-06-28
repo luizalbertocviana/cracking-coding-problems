@@ -95,9 +95,7 @@ class Shelter{
   void enqueue_(Type&& animal, unsigned queue_id){
     using pure_type = std::remove_reference_t<Type>;
 
-    auto unique_animal {std::make_unique<pure_type>()};
-
-    *unique_animal = std::move(animal);
+    auto unique_animal {std::make_unique<pure_type>(std::move(animal))};
 
     queue_set_.enqueue_at(queue_id, std::move(unique_animal));
   }
