@@ -21,7 +21,7 @@ public:
   virtual std::string talk() const {return "";}
 };
 
-class Dog : public Animal, public Identity<Dog>{
+class Dog final : public Animal, public Identity<Dog>{
 public:
   Dog() : Animal{}, Identity{}
   {}
