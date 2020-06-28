@@ -32,7 +32,7 @@ public:
 
   bool empty(){
     return std::all_of(std::cbegin(queue_), std::cend(queue_),
-                       [](auto& q) {return q.empty();});
+                       [](const auto& q) {return q.empty();});
   }
 
   bool empty_at(unsigned i){
