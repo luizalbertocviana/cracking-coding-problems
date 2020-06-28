@@ -122,7 +122,7 @@ class Shelter{
   }
 
   // dequeues an animal from queue indicated by queue_id
-  std::unique_ptr<Animal> dequeue_type_(unsigned queue_id){
+  std::unique_ptr<Animal> dequeue_from_(unsigned queue_id){
     // we get an optional from queue set that holds the returned
     // animal, if any
     if (auto opt {queue_set_.dequeue_from(queue_id)}){
@@ -163,12 +163,12 @@ public:
 
   // takes oldest dog, if any
   std::unique_ptr<Animal> dequeue_dog(){
-    return dequeue_type_(dog_queue);
+    return dequeue_from_(dog_queue);
   }
 
   // takes oldest cat, if any
   std::unique_ptr<Animal> dequeue_cat(){
-    return dequeue_type_(cat_queue);
+    return dequeue_from_(cat_queue);
   }
 };
 
