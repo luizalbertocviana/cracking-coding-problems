@@ -40,7 +40,7 @@ public:
   }
   
   void enqueue_at(unsigned i, Type&& e){
-    std::shared_ptr<Element> ptr {std::make_unique<Element>(e, queue(i))};
+    std::shared_ptr<Element> ptr {std::make_unique<Element>(std::move(e), queue(i))};
     
     queue(i).push(ptr);
 
