@@ -21,44 +21,6 @@ public:
   virtual std::string talk() const {return "";}
 };
 
-template<typename Type>
-class Identity{
-  unsigned id_;
-
-  inline static unsigned counter_ {1};
-public:
-  unsigned id() const{
-    return id_;
-  }
-
-  Identity() : id_{counter_}
-  {
-    ++counter_;
-  }
-
-  Identity(const Identity&) : id_{counter_}
-  {
-    ++counter_;
-  }
-
-  Identity& operator=(const Identity&){
-    id_ = counter_;
-
-    ++counter_;
-
-    return *this;
-  }
-
-  Identity(Identity&& identifiable) : id_{std::move(identifiable.id_)}
-  {}
-
-  Identity& operator=(Identity&& identifiable){
-    id_ = std::move(identifiable.id_);
-
-    return *this;
-  }
-};
-
 class Dog : public Animal, public Identity<Dog>{
 public:
   Dog() : Animal{}, Identity{}
