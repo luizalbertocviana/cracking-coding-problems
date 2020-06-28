@@ -35,11 +35,11 @@ public:
     return *this;
   }
 
-  Dog(Dog&& dog) : Animal{dog}, Identity{dog}
+  Dog(Dog&& dog) : Animal{std::move(dog)}, Identity{std::move(dog)}
   {}
 
   Dog& operator=(Dog&& dog){
-    Identity::operator=(dog);
+    Identity::operator=(std::move(dog));
 
     return *this;
   }
