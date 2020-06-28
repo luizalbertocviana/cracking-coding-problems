@@ -53,7 +53,7 @@ public:
   }
 };
 
-class Cat : public Animal, public Identity<Cat>{
+class Cat final : public Animal, public Identity<Cat>{
 public:
   Cat() : Animal{}, Identity{}
   {}
