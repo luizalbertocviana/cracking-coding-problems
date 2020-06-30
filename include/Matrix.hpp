@@ -186,4 +186,19 @@ public:
   }
 };
 
+template<typename Type>
+class SquareMatrix : public Matrix<Type>{
+  using Mat = Matrix<Type>;
+public:
+  using size_type = typename Mat::size_type;
+  SquareMatrix(size_type n) : Mat{n, n}
+  {}
+
+  SquareMatrix& operator=(const Type& e){
+    Mat::operator=(e);
+
+    return *this;
+  }
+};
+
 #endif
