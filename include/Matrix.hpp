@@ -63,6 +63,10 @@ public:
     return data_[index(i, j)];
   }
 
+  Type const_at(size_type i, size_type j) const{
+    return data_[index(i, j)];
+  }
+
   void print(std::ostream& out = std::cout){
     for (size_type i {0}; i < num_rows; i++){
       for (size_type j {0}; j < num_cols; j++){
