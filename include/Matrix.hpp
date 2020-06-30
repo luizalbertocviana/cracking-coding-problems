@@ -201,4 +201,54 @@ public:
   }
 };
 
+template<typename Type>
+class UpperTriangularMatrix{
+private:
+  using Data = Matrix<Type>;
+public:
+  using size_type = typename Data::size_type;
+private:
+  Data data_;
+
+  size_type n_;
+
+  size_type half_rows_;
+
+  static size_type set_half_rows_(size_type n){
+    if (n % 2 == 0){
+      return n / 2;
+    }
+    else{
+      return n / 2 + 1;
+    }
+  }
+
+  std::pair<size_type, size_type> index_(size_type i, size_type j){
+    if (i < half_rows_){
+      return {i, i + 1 + j};
+    }
+    else{
+      return {(n_ - 1) - i, (n_ - 1) - j};
+    }
+  }
+public:
+  const size_type& num_rows;
+  const size_type& num_cols;
+
+  UpperTriangularMatrix(size_type n)
+    : n_{n}, half_rows_{set_half_rows(n_)}, num_rows{n_}, num_cols{n_}, data_{half_rows_, n_ + 1}
+  {}
+
+  Type& at(size_type i, size_type j){
+    if ( i <= j){
+      auto[triangular_i, triangular_j] {index_(i, j)};
+
+      return data_.at(triangular_i, triangular_j);
+    }
+    else{
+      return 0;
+    }
+  }
+};
+
 #endif
