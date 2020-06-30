@@ -16,7 +16,7 @@ private:
   size_type rows_;
   size_type cols_;
 
-  size_type index(size_type i, size_type j){
+  size_type index(size_type i, size_type j) const{
     return cols_ * i + j;
   }
 public:
