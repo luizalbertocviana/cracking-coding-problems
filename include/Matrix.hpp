@@ -26,7 +26,8 @@ public:
   Matrix(size_type rows, size_type cols)
     : data_{}, rows_{rows}, cols_{cols}, num_rows{rows_}, num_cols{cols_}
   {
-    data_.reserve(rows_ * cols_);
+    data_.resize(rows_ * cols_);
+  }
   }
 
   Type& at(size_type i, size_type j){
