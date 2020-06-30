@@ -1,6 +1,8 @@
 #ifndef range_hpp
 #define range_hpp
 
+#include <iterator>
+
 template<typename Type>
 class Index{
   Type element_;
@@ -40,6 +42,12 @@ public:
   bool operator>(const Index& idx){
     return element_ > idx.element_;
   }
+
+  using iterator_category = std::input_iterator_tag;
+  using value_type        = Type;
+  using difference_type   = Type;
+  using pointer           = Type*;
+  using reference         = Type&;
 };
 
 template<typename Type>
