@@ -28,6 +28,35 @@ public:
   {
     data_.resize(rows_ * cols_);
   }
+
+  Matrix(const Matrix& m)
+    : data_{m.data_}, rows_{m.rows_}, cols_{m.cols_}, num_rows{rows_}, num_cols{cols_}
+  {}
+
+  Matrix& operator=(const Matrix& m){
+    data_ = m.data_;
+    rows_ = m.rows_;
+    cols_ = m.cols_;
+
+    return *this;
+  }
+
+  Matrix(Matrix&& m)
+    : data_{std::move(m.data_)}, rows_{std::move(m.rows_)}, cols_{std::move(m.cols_)}, num_rows{rows_}, num_cols{cols_}
+  {
+    m.rows_ = 0;
+    m.cols_ = 0;
+  }
+
+  Matrix& operator=(Matrix&& m){
+    data_ = std::move(m.data_);
+    rows_ = std::move(m.rows_);
+    cols_ = std::move(m.cols_);
+
+    m.rows_ = 0;
+    m.cols_ = 0;
+
+    return *this;
   }
 
   Type& at(size_type i, size_type j){
