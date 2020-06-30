@@ -1,5 +1,7 @@
 #include <queue.hpp>
 
+#include <range.hpp>
+
 #include <iostream>
 
 // implement a queue using two stacks
@@ -11,7 +13,7 @@ int main(){
 
   Queue<int> queue {};
 
-  for (int i {0}; i <= n; ++i){
+  for (auto i : range(0, n + 1)){
     queue.insert(i);
   }
 

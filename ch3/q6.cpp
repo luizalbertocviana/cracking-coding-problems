@@ -1,6 +1,8 @@
 #include <Identity.hpp>
 #include <QueueSet.hpp>
 
+#include <range.hpp>
+
 #include <iostream>
 #include <memory>
 #include <optional>
@@ -179,7 +181,7 @@ void test_shelter(){
 
   std::cout << "lets put " << p << " animals into the shelter\n";
 
-  for (auto i {0}; i < p; ++i){
+  for (auto i : range(0, p)){
     if (i % 2 == 0){
       shelter.enqueue(Cat{});
     }

@@ -1,5 +1,7 @@
 #include <StackSet.hpp>
 
+#include <range.hpp>
+
 #include <iostream>
 
 // develoop a data structure consisting of a sequence of stacks with
@@ -14,7 +16,7 @@ int main(){
 
   std::cout << "inserting ints from 1 to " << n << ":\n";
 
-  for (int i {1}; i <= n; ++i){
+  for (auto i : range(1, n + 1)){
     stk_set.push(i);
   }
 

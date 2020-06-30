@@ -1,5 +1,7 @@
 #include <Graph.hpp>
 
+#include <range.hpp>
+
 #include <iostream>
 #include <stack>
 
@@ -43,7 +45,7 @@ void test_route(){
   
   Digraph D {p};
 
-  for (size_type i {0}; i < D.num_verts - 1; ++i){
+  for (auto i : range<size_type>(0, D.num_verts - 1)){
     D.add_edge(i, i + 1);
   }
 

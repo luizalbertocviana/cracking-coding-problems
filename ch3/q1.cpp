@@ -1,5 +1,7 @@
 #include <StackSequence.hpp>
 
+#include <range.hpp>
+
 #include <iostream>
 
 // implement three stacks using a single array
@@ -7,11 +9,11 @@
 int main(){
   StackSequence<int, 3> stk_set {};
 
-  for (int i {0}; i < 20; ++i){
+  for (auto i : range(0, 20)){
     stk_set.push(i % 3, i);
   }
 
-  for (unsigned i {0}; i < 3; ++i){
+  for (auto i : range(0, 3)){
     std::cout << "removing content of stack " << i << ":\n";
 
     while(!stk_set.empty(i)){
