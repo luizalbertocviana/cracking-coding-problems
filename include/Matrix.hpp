@@ -2,8 +2,8 @@
 #define matrix_hpp
 
 #include <algorithm>
-#include <vector>
 #include <iostream>
+#include <vector>
 
 template<typename Type>
 class Matrix{
