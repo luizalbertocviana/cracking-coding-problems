@@ -251,4 +251,28 @@ public:
   }
 };
 
+template<typename Type>
+class LowerTriangularMatrix{
+  using Data = UpperTriangularMatrix<Type>;
+
+  Data data_;
+public:
+  using size_type = typename Data::size_type;
+
+  size_type& num_rows;
+  size_type& num_cols;
+
+  LowerTriangularMatrix(size_type n) : data_{n}, num_rows{data_.num_rows}, num_cols{data_.num_cols}
+  {}
+
+  Type& at(size_type i, size_type j){
+    if (i >= j){
+      return data_.at(j, i);
+    }
+    else{
+      return 0;
+    }
+  }
+};
+
 #endif
