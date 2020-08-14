@@ -1,0 +1,4 @@
+#+title: Cracking Coding Problems
+
+This repository contains C++ solutions to the problems proposed in the
+book Cracking The Coding Interview.
