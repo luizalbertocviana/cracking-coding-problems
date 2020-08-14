@@ -1,0 +1,6 @@
+add_executable(ch3-q1 q1.cpp)
+add_executable(ch3-q2 q2.cpp)
+add_executable(ch3-q3 q3.cpp)
+add_executable(ch3-q4 q4.cpp)
+add_executable(ch3-q5 q5.cpp)
+add_executable(ch3-q6 q6.cpp)
