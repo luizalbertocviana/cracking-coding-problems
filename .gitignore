@@ -81,3 +81,10 @@
 /ch2/CMakeLists.txt~
 /ch3/CMakeLists.txt~
 /ch4/CMakeLists.txt~
+/include/CMakeLists.txt~
+/include/Identity/CMakeLists.txt~
+/include/QueueSet/CMakeLists.txt~
+/include/StackSequence/CMakeLists.txt~
+/include/StackSet/CMakeLists.txt~
+/include/args/CMakeLists.txt~
+/include/range/CMakeLists.txt~
