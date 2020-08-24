@@ -16,8 +16,9 @@ set(CMAKE_CXX_STANDARD_REQUIRED True)
 
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
-include_directories(include)
 include_directories(data-structures-cpp)
+
+add_subdirectory(include)
 
 add_subdirectory(ch1)
 add_subdirectory(ch2)
