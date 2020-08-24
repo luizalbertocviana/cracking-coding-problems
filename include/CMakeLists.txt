@@ -1,0 +1,7 @@
+add_subdirectory(args)
+add_subdirectory(Identity)
+add_subdirectory(QueueSet)
+add_subdirectory(range)
+add_subdirectory(StackMin)
+add_subdirectory(StackSequence)
+add_subdirectory(StackSet)
